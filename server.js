@@ -1,7 +1,7 @@
 //server.js
 const express = require('express');
 const app = express();
-const port = 3003;
+const port = process.env.PORT || 3003;
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
@@ -21,7 +21,7 @@ mongoose.connect(mongoURI)
 
 // Enable CORS for frontend
 app.use(cors({
-  origin: 'http://localhost:3000', // ✅ match your frontend
+  origin: ['http://localhost:3000', 'https://frontend-mern.vercel.app'], // ✅ match your frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
   credentials: true
