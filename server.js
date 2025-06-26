@@ -21,7 +21,7 @@ mongoose.connect(mongoURI)
 
 // Enable CORS for frontend
 app.use(cors({
-  origin:  'https://frontend-mern-ten-gilt.vercel.app', // ✅ match your frontend
+  origin: ['http://localhost:3000', 'https://frontend-mern-ten-gilt.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type'],
   credentials: true
